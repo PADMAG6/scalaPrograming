@@ -5,3 +5,8 @@ counts.counts
 counts.cache()
 counts.saveAS
 counts.saveAsTextFile("C:/Hadooplocalspark/output.txt")
+counts.cache() ///for eliminating one error i executed this line once and again do the repartitioned step here///
+val repar= counts.repatition(5)
+repar.saveAsTextFile("C:/Hadooplocalspark/output1.txt")
+counts.unpersist() //this will remove the cache in spark////
+
