@@ -1,0 +1,7 @@
+val inputFile = sc.textFile("C:/Hadooplocalspark/sparkdata.txt")
+val counts = inputFile.flatMap(line => line.split(" ")).map(word =>(word,1)).reduceByKey(_+_);
+counts.toDebugString
+counts.counts
+counts.cache()
+counts.saveAS
+counts.saveAsTextFile("C:/Hadooplocalspark/output.txt")
